@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Metas compatibility + encoding -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Meta viewport : define browser viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Document title : <page name> | <site name> -->
+    <title>Nos chambres | mon Hôtel</title>
+
+    <!-- Document description : contain a short description of the page -->
+    <meta name="description" content="Découvrez les chambres de mon Hôtel à Rodez">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="aassets/img/favicon/pple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- assets : use defer attribute for read the scripts after the DOM painting -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300,400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script> 
+</head>
+<body>
+    <!-- =====================
+         FIRST PART : HEADING
+         =====================
+
+        Need :
+        - Logo 
+        - Navbar (12 tabs and burger button in small resolution)
+     -->
+    <header class="page-head">
+        <!-- Logo : contain an image link with alt attribute (contain action) -->
+        <a class="head-logo" href="/">
+            <img src="assets/img/monhotel.svg" alt="Retourner sur la page d'accueil de Monhôtel" width="30"> Monhôtel
+        </a>
+
+        <!-- Toggle button, use aria-* attribute for accessibility support -->
+        <button type="button" aria-controls="head-nav" aria-selected="false" class="head-navbutton" id="head-navbutton" title="Ouvrir le menu"><span>Menu</span></button>
+
+        <!-- Nav bar, use aria-$ attribute for accessibility support -->
+        <nav aria-labelledby="head-navbutton" aria-hidden="true" id="head-nav">
+            <ul class="head-nav">
+                <li>
+                    <a class="head-navitem" href="#">L'hôtel</a>
+                </li>
+                <li>
+                    <!-- Active tab -->
+                    <a class="head-navitem active" href="#">Les chambres</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Tarif</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Notre histoire</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Restaurant</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Presse</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Rodez</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Actualité</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Contact</a>
+                </li>
+                <li>
+                    <a class="head-navitem" href="#">Reserver</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- =====================
+            SECOND PART : MAIN
+            =====================
+
+            Need :
+            - Breadcrumb (optionnal)
+            - Page title 
+            - Room block (title, image, price, description, link)
+        -->
+        <main class="page-main">
+            <!-- Breacrumb : last child is current page (no link needed) -->
+            <ul class="breadcrumb">
+                <li><a href="#">Accueil</a></li>
+                <li>Les chambres</li>
+            </ul>
+
+            <!-- Page title : must to be the first level -->
+            <h1 class="page-title">Les chambres de Monhôtel</h1>
+
+            <!-- Room list -->
+            <ul class="rooms-list">
+                <!-- Room item : contain a title level 2 -->
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 1" height="140" src="images/room1.jpg" srcset="images/room1.jpg 1x, images/room1_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 1</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 2" height="140" src="images/room2.jpg" srcset="images/room2.jpg 1x, images/room2_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 2</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 3" height="140" src="images/room3.jpg" srcset="images/room3.jpg 1x, images/room3_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 3</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 4" height="140" src="images/room4.jpg" srcset="images/room4.jpg 1x, images/room4_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 4</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 5" height="140" src="images/room5.jpg" srcset="images/room5.jpg 1x, images/room5_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 5</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 6" height="140" src="images/room6.jpg" srcset="images/room6.jpg 1x, images/room6_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 6</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 7" height="140" src="images/room7.jpg" srcset="images/room7.jpg 1x, images/room7_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 7</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 8" height="140" src="images/room8.jpg" srcset="images/room8.jpg 1x, images/room8_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 8</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 9" height="140" src="images/room9.jpg" srcset="images/room9.jpg 1x, images/room9_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 9</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 10" height="140" src="images/room10.jpg" srcset="images/room10.jpg 1x, images/room10_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 10</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 11" height="140" src="images/room11.jpg" srcset="images/room11.jpg 1x, images/room11_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 11</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+                <li class="room-item">
+                    <img class="room-img" alt="Chambre 12" height="140" src="images/room12.jpg" srcset="images/room12.jpg 1x, images/room12_2x.jpg 2x">
+                    <div class="room-price">135 €/nuitée</div>
+                    <h2 class="room-title">Chambre 12</h2>
+                    <p class="room-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis neque dui, eu tempus mauris pharetra feugiat.</p>
+                    <a class="room-link" href="#">Voir la chambre</a>
+                </li>
+            </ul>
+        </main>
+
+        <!-- =====================
+            THIRD PART : ASIDE
+            =====================
+
+            Need :
+            - Categories list
+        -->
+        <aside class="page-aside">
+            <!-- Title aside, can be level 1 -->
+            <h1 class="aside-title">Nos types de chambres</h1>
+
+            <ul class="aside-list">
+                <li>
+                    <a class="link" href="#">Les chambres simples</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Les suites de luxe</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Les caravanes bleus pervenches</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Le Faucon Millenium</a>
+                </li>
+                <li>
+                    <a class="link" href="#">Les yourtes</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    
+    <!-- =====================
+         FOURTH PART : HEADING
+         =====================
+
+        Need :
+        - Adress
+        - sub nav (5 tabs)
+        - Copyright
+        - Legacy link
+     -->
+    <footer class="page-footer">
+        <div class="footer-wrapper">
+            <div class="footer-elem">
+                <h1 class="footer-title">
+                    <img src="assets/img/monhotel_light.svg" alt="" width="30"> Monhôtel
+                </h1>
+                <address>
+                    01, Rue du Hain<br>
+                    12 000 RODEZ France<br>
+                    <a href="tel:0556000000">+(33)5 56 00 00 00</a><br>
+                    <a class="facebook-link" href="#">Retrouvez-nous sur Facebook</a>
+                </address>
+            </div>
+            <nav class="footer-elem">
+                <ul>
+                    <li><a href="#">L'hôtel</a></li>
+                    <li><a href="#">Les chambres</a></li>
+                    <li><a href="#">Tarifs</a></li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-links">
+            <p>&copy; Copyrights 2018</p>
+            <a href="#">Mentions légales</a>
+        </div>
+    </footer>
+</body>
+</html>

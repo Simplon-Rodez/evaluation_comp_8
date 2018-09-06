@@ -1,0 +1,414 @@
+/*****************/
+/*    GLOBAL    */
+/***************/
+/* RESET user agent stylesheet */
+body,
+ul,
+h1,
+h2,
+p {
+    margin: 0;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+button {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+/* DOCUMENT */
+html {
+    font-size: 62.5%; /* 62.5% * 16px (usually browser default font-size) = 10px. Each rem is calculate */
+    font-family: 'Roboto', arial, sans-serif; /* Main font family with subtitution font */
+    color: #363636;
+    background: #fff;
+}
+body {
+    font-size: 1.6rem;
+    overflow-x: hidden; /* hide scrollbar horisontal */
+}
+a {
+    transition: all ease-in .2s;
+}
+
+
+/*****************/
+/*     HEAD     */
+/***************/
+.page-head {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #a9abac;
+    width: 100%;
+    height: 90px;
+    box-shadow: 0 0 5px rgba(169, 171, 172, .5);
+    background: #fff;
+}
+.head-logo {
+    font-family: Lato, arial, sans-serif;
+    font-size: 2rem;
+    color: #363636;
+    text-decoration: none;
+}
+.head-logo img {
+    vertical-align: bottom;
+}
+.head-navitem {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px;
+    color: #363636;
+    text-decoration: none;
+}
+.head-navitem:not(.active):focus {
+    color: #939393;
+}
+.head-navitem:not(.active):hover {
+    color: #1575b4;
+}
+.head-navitem.active {
+    border-radius: 3px;
+    background: #1575b4;
+    color: #fff;
+}
+/* Bonus : show bar under the link on hover */
+.head-navitem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 2px;
+    background: #1575b4;
+    transition: all ease-in .2s;
+}
+.head-navitem:hover::after {
+    width: calc(100% - 20px);
+}
+
+
+/*****************/
+/*     MAIN     */
+/***************/
+.page-wrapper {
+    padding: 90px 20px 40px;
+    font-weight: 300;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+.breadcrumb li {
+    margin-right: 4px;
+}
+.breadcrumb li:nth-child(n+2)::before { /* add slash before the li, not in the first one */
+    content: '/ ';
+}
+.breadcrumb a {
+    color: #1575b4;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    color: #363636;
+}
+
+/* Main */
+.page-title {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: Lato, arial, sans-serif;
+    color: #1575b4;
+}
+.rooms-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.room-item {
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid #f3f3f3;
+    padding: 10px;
+}
+.room-img {
+    display: block;
+    margin: -11px -11px 0;
+    width: calc(100% + 22px);
+    object-fit: cover;
+}
+.room-price {
+    position: absolute;
+    right: -1px;
+    top: 99px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px; 
+    color: #fff;
+    font-weight: 400;
+    background: #363636;
+}
+.room-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.room-link {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto; /* align right */
+    border-radius: 3px;
+    padding: 10px;
+    width: 150px; /* if browser doesn't support max-content value */
+    width: max-content;
+    text-align: center;
+    text-decoration: none;
+    background: #1575b4;
+    color: #fff;
+    font-weight: 400;
+    transition: background ease-in .2s;
+}
+.room-link:hover {
+    background: #363636;
+}
+
+
+/*****************/
+/*    ASIDE     */
+/***************/
+.page-aside {
+    padding-bottom: 10px;
+    align-self: flex-start;
+    border: 1px solid #f3f3f3;
+}
+.aside-title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    text-align: center;
+    font-family: Lato, arial, sans-serif;
+    color: #1575b4;
+}
+.aside-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.aside-list li {
+    margin: 10px 10px 0;
+    max-width: 300px;
+}
+.aside-list a {
+    display: block;
+    border: 1px solid #1575b4;
+    padding: 10px;
+    text-decoration: none;
+    color: #363636;
+    border-radius: 3px;
+}
+.aside-list a:hover {
+    color: #fff;
+    background: #1575b4;
+}
+
+
+/*****************/
+/*    FOOTER    */
+/***************/
+.footer-wrapper {
+    padding: 40px 20px;
+    background: #363636;
+    color: #fbfbfb;
+    font-weight: 300;
+}
+.footer-wrapper address {
+    padding-left: 40px;
+    font-style: normal;
+}
+.footer-wrapper address a {
+    display: inline-block;
+    padding-top: 10px;
+}
+.footer-wrapper a {
+    text-decoration: none;
+    color: #fbfbfb;
+}
+.footer-wrapper a:hover {
+    color: #1575b4;
+}
+.footer-links {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-links a {
+    color: #363636;
+}
+.footer-links a:hover {
+    color: #1575b4;
+}
+
+/*****************/
+/*    MEDIAS    */
+/***************/
+@media (max-width: 599px) {
+    /* Main */
+    .room-item {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-elem {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+@media (min-width: 600px) {
+    /* Main */
+    .page-wrapper {
+        padding-top: 400px;
+        background: url(../img/hostel.jpg) top center/auto 400px no-repeat;
+    }
+
+    /* Footer */
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-elem {
+        width: calc(50% - 10px);
+    }
+    .footer-elem:last-child {
+        text-align: right;
+    }
+}
+
+@media (max-width: 999px) {
+    /* Header */
+    /* Burger nav */
+    .head-navbutton {
+        position: relative; /* Set position for pseudo element position */
+        margin-left: auto; /* set button to the right */
+        border: 0;
+        width: 50px; /* set size for pseudo elements */
+        height: 50px;
+        background: none;
+    }
+    .head-navbutton::before,
+    .head-navbutton::after {
+        content:'';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto; /* center element */
+        display: block;
+        width: 45%;
+        height: 2px; /* set bar height */
+        border-radius: 2px;
+        transition: all ease-in .2s;
+    }
+    .head-navbutton::before {
+        background: #939393; /* default : background before make bar middle */
+        box-shadow: 0 7px 0 #939393, 0 -7px 0 #939393; /* default : box shadow make bar up and bar down */
+    }
+    .head-navbutton span {
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    .head-navbutton:hover::before,
+    .head-navbutton[aria-selected=true]::before {
+        top: 15px;
+        transform: translateY(-10px) rotate(45deg); /* active : translate middle bar */
+        box-shadow: none; /* active : hide bar up and bar down */
+    }
+    .head-navbutton:hover::after,
+    .head-navbutton[aria-selected=true]::after {
+        top: 15px;
+        background: #939393;
+        transform: translateY(-10px) rotate(135deg); /* active : create second middle bar and translate it */
+    }
+    .head-nav {
+        position: absolute;/* set nav position absolute */
+        top: 100%; /* nav is under header (100% to the top of first parent positionned) */
+        left: 0;
+        box-sizing: border-box;
+        border-bottom: 1px solid #a9abac;
+        padding: 10px;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(169, 171, 172, .5);
+        transition: all ease-in .2s;
+    }
+    [aria-hidden="true"] .head-nav {
+        left: -100%;
+    }
+}
+@media (min-width: 1000px) {
+    /* Header */
+    /* hide button in big resolutions */
+    .head-navbutton {
+        display: none;
+    }
+    .head-nav {
+        display: flex;
+    }
+
+    /* Wrapper */
+    .page-wrapper {
+        display: flex;
+    }
+    .page-main {
+        flex: 1;
+    }
+    .page-aside {
+        margin-top: 80px;
+        margin-left: 20px;
+        width: 300px;
+    }
+}
+@media (min-width: 600px) and (max-width: 1199px) {
+    .room-item {
+        width: calc(50% - 10px);
+    }
+}
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .room-item {
+        width: calc(33.33% - 10px);
+    }
+}
+@media (min-width: 1600px) {
+    /* global */
+    .page-wrapper,
+    .footer-wrapper,
+    .footer-links {
+        /* 
+            Above 1200px > container made 100% viewport width but her content made 1160px width,
+            padding left and right equals to : <half viewport width> - (<half 1200px> - <padding left|right>)
+        */
+        padding-left: calc(50% - 780px);
+        padding-right: calc(50% - 780px);
+    }
+    .room-item {
+        width: calc(25% - 10px);
+    }
+}
